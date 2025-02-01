@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login | Birthday Gift</title>
+    <link rel="stylesheet" href="hon.css">
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var birthday = document.getElementById("birthday").value;
+            
+            if (username === "kurty" && birthday === "2006-02-04") { // Change birthday if needed
+                localStorage.setItem("authenticated", "true");
+                localStorage.setItem("playMusic", "true"); // Store flag to play music
+                window.location.href = "main.html";
+            } else {
+                alert("Incorrect username or birthday. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" required>
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+</body>
+</html>

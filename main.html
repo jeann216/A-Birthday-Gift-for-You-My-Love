@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happiest 19th Birthday Lovey!!</title>
+    <link rel="stylesheet" href="hon.css">
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem("authenticated") !== "true") {
+                window.location.href = "index.html";
+            } else {
+                var music = document.getElementById("Music");
+                if (localStorage.getItem("playMusic") === "true") {
+                    music.muted = true; 
+                    music.play().then(() => {
+                        music.muted = false;  
+                    }).catch(error => {
+                        console.log("Autoplay was blocked. User needs to interact.");
+                    });
+                    localStorage.removeItem("playMusic"); 
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>FOR MY LOVE</h1>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#Quotes">Quotes</a>
+            <a href="#Letter">Letter</a>
+            <a href="#Music">Music</a>
+        </nav>
+    </header>
+
+    <section id="Home">
+        <h2>A website gift for you, my safe place!</h2>
+        <p>Here I compiled all my favorite pictures of us, a letter, and a song.</p>
+
+        <div class="slider">
+            <div class="slides">
+                <img src="hon (2).jpg" alt="hon">
+                <img src="love (2).jpg" alt="love">
+                <img src="bebe (3).jpg" alt="bebe">
+                <img src="loveyy (2).jpg" alt="loveyy">
+                <img src="pango (2).jpg" alt="pango">
+                <img src="panget (2).jpg" alt="panget">
+                <img src="us (2).jpg" alt="us">
+                <img src="peace (2).jpg" alt="peace">
+                <img src="home (2).jpg" alt="home">
+                <img src="safeplace (2).jpg" alt="safeplace">
+            </div>
+        </div>
+    </section>
+
+    <section id="Quotes">
+        <h2>Quotes</h2>
+        <div class="quote-grid">
+            <div class="quotes">You're my favorite place to go to when my mind searches for peace. <span class="tag">Peace</span></div>
+            <div class="quotes">I will look for you in every lifetime and love you there. <span class="tag">Love</span></div>
+            <div class="quotes">I've liked you since I met you. <span class="tag">Forever</span></div>
+        </div>
+    </section>
+
+    <section id="Letter">
+        <h2>A Letter for You</h2>
+        <div class="letter-container">
+            <p>
+                Today is your birthday, and you're already 19, the last year of being a teenager. 
+                Also, this will be our 3rd time celebrating your birthday, lovey ko! Happiest birthday, my love, 
+                Wishing you a wonderful and blessed birthday! Now that you're 19, my wish is still the same: 
+                that you achieve your goals, and I will always support you no matter what. 
+                Also, if you are feeling down, just come to me or just chat with me. I will always listen and comfort you, hon!
+            </p>
+            <p>
+                Even if we're arguing, you know naman that I will always love you, right? We will always fix it right after. 
+                You're the man that I always love, you're my everything, you're the home that I will always be longing for when 
+                we're not together, you're my safe place and peace. My love for you is growing deeply every day, it never fades.
+            </p>
+            <p>
+                Wishing you happiness on your 19th birthday and unlocking more adventures now that you have a license but 
+                remember to take care and slow down whenever you're driving. I'm always here waiting for you. 
+                I will always be here by your side. You know that I am proud of you for whatever achievement you have. 
+                Dream high, my love. I love you so much and enjoy your special day, handsome!!! mwaaaaaaaa mwaaaaaaa
+            </p>
+        </div>
+    </section>
+
+    <section id="Music">
+        <h2>Music</h2>
+        <p>This song reminds me of you.</p>
+        <div class="music-container">
+            <img src="blue.jpg" alt="Album Cover">
+            <p>Blue - Yung Kai</p>
+            <audio id="Music" controls>
+                <source src="blue instrumental.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Jeanny!</p>
+    </footer>
+</body>
+</html>
